@@ -1,0 +1,3268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sun☀shine Pharmacy Rwanda - Your Health, Our Priority</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/48/medical-doctor.png">
+    <style>
+        /* CSS Variables for Theme */
+        :root {
+            --primary-color: #FF6B35;
+            --secondary-color: #004E89;
+            --accent-color: #FFD166;
+            --success-color: #28A745;
+            --danger-color: #DC3545;
+            --warning-color: #FFC107;
+            --dark-color: #212529;
+            --light-color: #F8F9FA;
+            --gray-color: #6C757D;
+            --light-gray: #E9ECEF;
+            
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark-color);
+            line-height: 1.6;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Enhanced Logo */
+        .logo {
+            position: relative;
+            display: inline-block;
+        }
+
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 2;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .sun-art {
+            position: absolute;
+            top: -10px;
+            left: 35px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #FFD166, #FF9E00);
+            border-radius: 50%;
+            z-index: 1;
+            animation: sun-rotate 20s linear infinite;
+            box-shadow: 0 0 30px rgba(255, 209, 102, 0.7);
+        }
+
+        .sun-art::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60%;
+            height: 60%;
+            background: #FF9E00;
+            border-radius: 50%;
+        }
+
+        .sun-rays {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+        }
+
+        .ray {
+            position: absolute;
+            width: 4px;
+            height: 20px;
+            background: #FFD166;
+            border-radius: 2px;
+            top: 50%;
+            left: 50%;
+            transform-origin: 0 0;
+        }
+
+        .ray:nth-child(1) { transform: rotate(0deg) translateX(25px); }
+        .ray:nth-child(2) { transform: rotate(30deg) translateX(25px); }
+        .ray:nth-child(3) { transform: rotate(60deg) translateX(25px); }
+        .ray:nth-child(4) { transform: rotate(90deg) translateX(25px); }
+        .ray:nth-child(5) { transform: rotate(120deg) translateX(25px); }
+        .ray:nth-child(6) { transform: rotate(150deg) translateX(25px); }
+        .ray:nth-child(7) { transform: rotate(180deg) translateX(25px); }
+        .ray:nth-child(8) { transform: rotate(210deg) translateX(25px); }
+        .ray:nth-child(9) { transform: rotate(240deg) translateX(25px); }
+        .ray:nth-child(10) { transform: rotate(270deg) translateX(25px); }
+        .ray:nth-child(11) { transform: rotate(300deg) translateX(25px); }
+        .ray:nth-child(12) { transform: rotate(330deg) translateX(25px); }
+
+        @keyframes sun-rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .pharmacy-text {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-top: -5px;
+            text-transform: uppercase;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.98) 100%);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 78, 137, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .navbar ul {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 600;
+            transition: var(--transition);
+            padding: 8px 0;
+            position: relative;
+            font-size: 1.1rem;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: var(--primary-color);
+        }
+
+        .navbar a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            transition: var(--transition);
+            border-radius: 3px;
+        }
+
+        .navbar a:hover::after,
+        .navbar a.active::after {
+            width: 100%;
+        }
+
+        /* User Actions */
+        .user-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-size: 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), #ff8c5a);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, var(--secondary-color), #0056b3);
+            color: white;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-large {
+            padding: 15px 35px;
+            font-size: 1.1rem;
+        }
+
+        /* Hero Slider */
+        .hero-slider {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            margin: 20px 0;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .slider-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            color: white;
+            padding: 40px;
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+        }
+
+        .slider-controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .slider-dot.active {
+            background: white;
+            transform: scale(1.2);
+        }
+
+        /* Medicine Cards */
+        .medicines-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .medicine-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--light-gray);
+        }
+
+        .medicine-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .medicine-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .real-medicine-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .medicine-card:hover .real-medicine-img {
+            transform: scale(1.05);
+        }
+
+        .medicine-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--primary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .medicine-info {
+            padding: 20px;
+        }
+
+        .medicine-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .medicine-description {
+            color: var(--gray-color);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .medicine-price {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .medicine-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
+        .medicine-stock {
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-weight: 600;
+        }
+
+        .in-stock {
+            background: rgba(40, 167, 69, 0.1);
+            color: var(--success-color);
+        }
+
+        .low-stock {
+            background: rgba(255, 193, 7, 0.1);
+            color: var(--warning-color);
+        }
+
+        .out-of-stock {
+            background: rgba(220, 53, 69, 0.1);
+            color: var(--danger-color);
+        }
+
+        /* Admin Dashboard */
+        .admin-container {
+            display: flex;
+            min-height: calc(100vh - 100px);
+        }
+
+        .admin-sidebar {
+            width: 250px;
+            background: linear-gradient(180deg, var(--secondary-color), #003366);
+            color: white;
+            padding: 20px 0;
+        }
+
+        .sidebar-header {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .sidebar-menu ul {
+            list-style: none;
+        }
+
+        .sidebar-menu a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px 25px;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+            border-left: 4px solid transparent;
+        }
+
+        .sidebar-menu a:hover,
+        .sidebar-menu a.active {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-left-color: var(--accent-color);
+        }
+
+        .sidebar-menu i {
+            width: 20px;
+            text-align: center;
+        }
+
+        .admin-main {
+            flex: 1;
+            background: var(--light-color);
+        }
+
+        .admin-topbar {
+            background: white;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--shadow);
+        }
+
+        .admin-content {
+            padding: 30px;
+        }
+
+        .admin-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .admin-stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .admin-stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .admin-stat-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .admin-stat-value {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--secondary-color);
+            margin: 10px 0;
+        }
+
+        .admin-stat-label {
+            color: var(--gray-color);
+            font-size: 1rem;
+        }
+
+        /* Forms */
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid var(--light-gray);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        /* Tables */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .data-table th {
+            background: var(--light-gray);
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+
+        .data-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        /* Status Badges */
+        .status-badge {
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .status-pending {
+            background: rgba(255, 193, 7, 0.1);
+            color: var(--warning-color);
+        }
+
+        .status-processing {
+            background: rgba(0, 123, 255, 0.1);
+            color: #007bff;
+        }
+
+        .status-delivered {
+            background: rgba(40, 167, 69, 0.1);
+            color: var(--success-color);
+        }
+
+        .status-cancelled {
+            background: rgba(220, 53, 69, 0.1);
+            color: var(--danger-color);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: var(--border-radius);
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalSlideIn 0.3s ease;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-header {
+            padding: 25px;
+            border-bottom: 1px solid var(--light-gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(135deg, var(--primary-color), #ff8c5a);
+            color: white;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        .modal-body {
+            padding: 30px;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .close-modal:hover {
+            transform: scale(1.2);
+        }
+
+        /* Alert Messages */
+        .alert {
+            padding: 15px 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .alert-success {
+            background: rgba(40, 167, 69, 0.1);
+            color: var(--success-color);
+            border: 1px solid rgba(40, 167, 69, 0.2);
+        }
+
+        .alert-error {
+            background: rgba(220, 53, 69, 0.1);
+            color: var(--danger-color);
+            border: 1px solid rgba(220, 53, 69, 0.2);
+        }
+
+        .alert-warning {
+            background: rgba(255, 193, 7, 0.1);
+            color: var(--warning-color);
+            border: 1px solid rgba(255, 193, 7, 0.2);
+        }
+
+        /* Section Header */
+        .section-header {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: var(--gray-color);
+            font-size: 1.1rem;
+        }
+
+        /* Cart */
+        .cart-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .cart-item-img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+        }
+
+        .cart-item-details {
+            flex: 1;
+        }
+
+        .cart-summary {
+            background: white;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-top: 30px;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--secondary-color), #003366);
+            color: white;
+            padding: 50px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Utility Classes */
+        .hidden {
+            display: none !important;
+        }
+
+        .active {
+            display: block !important;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .mt-20 { margin-top: 20px; }
+        .mt-30 { margin-top: 30px; }
+        .mt-40 { margin-top: 40px; }
+        .mb-20 { margin-bottom: 20px; }
+        .mb-30 { margin-bottom: 30px; }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header .container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .navbar ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            
+            .user-actions {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .hero-slider {
+                height: 300px;
+            }
+            
+            .medicines-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .admin-container {
+                flex-direction: column;
+            }
+            
+            .admin-sidebar {
+                width: 100%;
+            }
+            
+            .slider-dot {
+                width: 10px;
+                height: 10px;
+            }
+        }
+    </style>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js for graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Main App Container -->
+    <div id="app">
+        <!-- Header -->
+        <header class="header" id="main-header">
+            <div class="container">
+                <div class="logo">
+                    <a href="#" onclick="showPage('home')" style="text-decoration: none;">
+                        <div class="logo-text">
+                            Sun<span style="position: relative; z-index: 2;">shine</span>
+                            <div class="sun-art">
+                                <div class="sun-rays">
+                                    <div class="ray"></div><div class="ray"></div><div class="ray"></div>
+                                    <div class="ray"></div><div class="ray"></div><div class="ray"></div>
+                                    <div class="ray"></div><div class="ray"></div><div class="ray"></div>
+                                    <div class="ray"></div><div class="ray"></div><div class="ray"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pharmacy-text">Pharmacy & Wellness Rwanda</div>
+                    </a>
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="navbar">
+                    <ul>
+                        <li><a href="#" onclick="showPage('home')" class="active">Home</a></li>
+                        <li><a href="#" onclick="showPage('medicines')">Medicines</a></li>
+                        <li><a href="#" onclick="showPage('cart')">Cart (<span id="cart-count">0</span>)</a></li>
+                        <li><a href="#" onclick="showPage('orders')">My Orders</a></li>
+                        <li><a href="#" onclick="showPage('admin')" id="admin-nav" class="hidden">Admin</a></li>
+                        <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- User Actions -->
+                <div class="user-actions">
+                    <div id="auth-buttons" class="auth-buttons">
+                        <a href="#" onclick="showPage('login')" class="btn btn-outline">
+                            <i class="fas fa-sign-in-alt"></i> Login
+                        </a>
+                        <a href="#" onclick="showPage('register')" class="btn btn-primary">
+                            <i class="fas fa-user-plus"></i> Register
+                        </a>
+                    </div>
+                    
+                    <div id="user-menu" class="hidden">
+                        <div class="user-dropdown">
+                            <button class="btn btn-outline" onclick="logout()">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main id="main-content">
+            <!-- Home Page -->
+            <section id="home-page" class="page active">
+                <!-- Hero Slider -->
+                <div class="container">
+                    <div class="hero-slider">
+                        <div class="slider-container">
+                            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1516549655669-df6654e435de?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80');">
+                                <div class="slide-content">
+                                    <h2 style="font-size: 2.5rem; margin-bottom: 10px;">Quality Healthcare Services</h2>
+                                    <p style="font-size: 1.2rem;">Your health is our priority</p>
+                                </div>
+                            </div>
+                            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80');">
+                                <div class="slide-content">
+                                    <h2 style="font-size: 2.5rem; margin-bottom: 10px;">Premium Medicines</h2>
+                                    <p style="font-size: 1.2rem;">Authentic products at affordable prices</p>
+                                </div>
+                            </div>
+                            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80');">
+                                <div class="slide-content">
+                                    <h2 style="font-size: 2.5rem; margin-bottom: 10px;">24/7 Pharmacy Support</h2>
+                                    <p style="font-size: 1.2rem;">Always here for your healthcare needs</p>
+                                </div>
+                            </div>
+                            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80');">
+                                <div class="slide-content">
+                                    <h2 style="font-size: 2.5rem; margin-bottom: 10px;">Expert Medical Advice</h2>
+                                    <p style="font-size: 1.2rem;">Consult with our qualified pharmacists</p>
+                                </div>
+                            </div>
+                            <div class="slider-controls">
+                                <div class="slider-dot active" onclick="changeSlide(0)"></div>
+                                <div class="slider-dot" onclick="changeSlide(1)"></div>
+                                <div class="slider-dot" onclick="changeSlide(2)"></div>
+                                <div class="slider-dot" onclick="changeSlide(3)"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-header">
+                    <h2>Featured Medicines</h2>
+                    <p>Trusted healthcare products for your wellness journey</p>
+                </div>
+
+                <div class="container">
+                    <div class="medicines-grid" id="featured-medicines">
+                        <!-- Featured medicines loaded via JavaScript -->
+                    </div>
+                    
+                    <div style="text-align: center; margin: 60px 0;">
+                        <a href="#" onclick="showPage('medicines')" class="btn btn-primary btn-large">
+                            <i class="fas fa-eye"></i> View All Medicines
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Services Section -->
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Our Services</h2>
+                        <p>Comprehensive healthcare solutions</p>
+                    </div>
+                    
+                    <div class="medicines-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                        <div class="medicine-card">
+                            <div class="medicine-image" style="background: linear-gradient(135deg, #4ecdc4, #44a08d);">
+                                <i class="fas fa-prescription-bottle-alt" style="font-size: 4rem; color: white;"></i>
+                            </div>
+                            <div class="medicine-info">
+                                <h3 class="medicine-name">Medicine Dispensing</h3>
+                                <p class="medicine-description">Get your prescribed medicines accurately dispensed by our professional pharmacists.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="medicine-card">
+                            <div class="medicine-image" style="background: linear-gradient(135deg, #ff6b6b, #ee5a52);">
+                                <i class="fas fa-user-md" style="font-size: 4rem; color: white;"></i>
+                            </div>
+                            <div class="medicine-info">
+                                <h3 class="medicine-name">Medical Consultation</h3>
+                                <p class="medicine-description">Consult with our qualified pharmacists for medical advice and recommendations.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="medicine-card">
+                            <div class="medicine-image" style="background: linear-gradient(135deg, #ffd166, #ffb347);">
+                                <i class="fas fa-truck" style="font-size: 4rem; color: white;"></i>
+                            </div>
+                            <div class="medicine-info">
+                                <h3 class="medicine-name">Home Delivery</h3>
+                                <p class="medicine-description">Get your medicines delivered to your doorstep within Kigali and surrounding areas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="medicine-card">
+                            <div class="medicine-image" style="background: linear-gradient(135deg, #118ab2, #0a7a9c);">
+                                <i class="fas fa-heartbeat" style="font-size: 4rem; color: white;"></i>
+                            </div>
+                            <div class="medicine-info">
+                                <h3 class="medicine-name">Health Checkups</h3>
+                                <p class="medicine-description">Basic health checkups including blood pressure, glucose, and cholesterol monitoring.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Login Page -->
+            <section id="login-page" class="page hidden">
+                <div class="container" style="padding: 60px 0;">
+                    <div class="form-container">
+                        <h2 class="text-center" style="margin-bottom: 30px;">Login to Your Account</h2>
+                        <div id="login-alert" class="alert hidden"></div>
+                        <form id="login-form">
+                            <div class="form-group">
+                                <label for="login-email">Email Address</label>
+                                <input type="email" id="login-email" class="form-control" placeholder="Enter your email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="login-password">Password</label>
+                                <input type="password" id="login-password" class="form-control" placeholder="Enter your password" required>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px;">
+                                    <i class="fas fa-sign-in-alt"></i> Login
+                                </button>
+                            </div>
+                            <div class="text-center">
+                                <p>Don't have an account? <a href="#" onclick="showPage('register')" style="color: var(--primary-color);">Register here</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Register Page -->
+            <section id="register-page" class="page hidden">
+                <div class="container" style="padding: 60px 0;">
+                    <div class="form-container">
+                        <h2 class="text-center" style="margin-bottom: 30px;">Create New Account</h2>
+                        <div id="register-alert" class="alert hidden"></div>
+                        <form id="register-form">
+                            <div class="form-group">
+                                <label for="register-name">Full Name</label>
+                                <input type="text" id="register-name" class="form-control" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="register-email">Email Address</label>
+                                <input type="email" id="register-email" class="form-control" placeholder="Enter your email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="register-phone">Phone Number</label>
+                                <input type="tel" id="register-phone" class="form-control" placeholder="Enter your phone number" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="register-address">Address</label>
+                                <textarea id="register-address" class="form-control" placeholder="Enter your address" rows="3" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="register-password">Password</label>
+                                <input type="password" id="register-password" class="form-control" placeholder="Create a password" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="register-confirm-password">Confirm Password</label>
+                                <input type="password" id="register-confirm-password" class="form-control" placeholder="Confirm your password" required>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px;">
+                                    <i class="fas fa-user-plus"></i> Register
+                                </button>
+                            </div>
+                            <div class="text-center">
+                                <p>Already have an account? <a href="#" onclick="showPage('login')" style="color: var(--primary-color);">Login here</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Medicines Page -->
+            <section id="medicines-page" class="page hidden">
+                <div class="container" style="padding: 40px 0;">
+                    <div class="section-header">
+                        <h2>Our Medicines</h2>
+                        <p>Quality healthcare products with detailed information</p>
+                    </div>
+                    
+                    <div class="search-container" style="margin-bottom: 30px;">
+                        <input type="text" id="medicine-search" class="form-control" placeholder="Search medicines by name, category, or manufacturer..." onkeyup="searchMedicines()">
+                    </div>
+                    
+                    <div class="category-filter" style="display: flex; gap: 10px; margin-bottom: 30px; flex-wrap: wrap;">
+                        <button class="btn btn-outline" onclick="filterMedicines('all')">All</button>
+                        <button class="btn btn-outline" onclick="filterMedicines('pain')">Pain Relief</button>
+                        <button class="btn btn-outline" onclick="filterMedicines('fever')">Fever & Cold</button>
+                        <button class="btn btn-outline" onclick="filterMedicines('allergy')">Allergy</button>
+                        <button class="btn btn-outline" onclick="filterMedicines('vitamin')">Vitamins</button>
+                        <button class="btn btn-outline" onclick="filterMedicines('antibiotic')">Antibiotics</button>
+                        <button class="btn btn-outline" onclick="filterMedicines('chronic')">Chronic Disease</button>
+                    </div>
+                    
+                    <div class="medicines-grid" id="all-medicines">
+                        <!-- All medicines loaded via JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cart Page -->
+            <section id="cart-page" class="page hidden">
+                <div class="container" style="padding: 40px 0;">
+                    <h2 style="margin-bottom: 30px;">Shopping Cart</h2>
+                    
+                    <div class="cart-container">
+                        <div id="cart-items">
+                            <!-- Cart items loaded via JavaScript -->
+                        </div>
+                        
+                        <div class="cart-summary">
+                            <h3 style="margin-bottom: 20px;">Order Summary</h3>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <span>Subtotal:</span>
+                                <span id="cart-subtotal">0 RWF</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <span>Delivery:</span>
+                                <span id="cart-delivery">2,000 RWF</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 20px; font-weight: bold; font-size: 1.2rem;">
+                                <span>Total:</span>
+                                <span id="cart-total">2,000 RWF</span>
+                            </div>
+                            <button onclick="checkout()" class="btn btn-primary" style="width: 100%; padding: 15px;">
+                                <i class="fas fa-shopping-cart"></i> Proceed to Checkout
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Orders Page -->
+            <section id="orders-page" class="page hidden">
+                <div class="container" style="padding: 40px 0;">
+                    <h2 style="margin-bottom: 30px;">My Orders</h2>
+                    
+                    <div id="orders-list">
+                        <!-- Orders loaded via JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Page -->
+            <section id="contact-page" class="page hidden">
+                <div class="container" style="padding: 60px 0;">
+                    <div class="section-header">
+                        <h2>Contact Us</h2>
+                        <p>Get in touch with our team</p>
+                    </div>
+                    
+                    <div class="medicines-grid" style="grid-template-columns: 2fr 1fr; gap: 40px;">
+                        <div>
+                            <div class="form-container">
+                                <h3 style="margin-bottom: 20px;">Send us a Message</h3>
+                                <form id="contact-form">
+                                    <div class="form-group">
+                                        <label for="contact-name">Your Name</label>
+                                        <input type="text" id="contact-name" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="contact-email">Email Address</label>
+                                        <input type="email" id="contact-email" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="contact-message">Message</label>
+                                        <textarea id="contact-message" class="form-control" rows="5" required></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="fas fa-paper-plane"></i> Send Message
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="medicine-card" style="height: fit-content;">
+                                <div class="medicine-info">
+                                    <h3 class="medicine-name">Contact Information</h3>
+                                    <div style="margin-top: 20px;">
+                                        <p style="margin-bottom: 15px;">
+                                            <i class="fas fa-map-marker-alt" style="color: var(--primary-color); margin-right: 10px;"></i>
+                                            <strong>Address:</strong><br>
+                                            Kigali, Rwanda
+                                        </p>
+                                        <p style="margin-bottom: 15px;">
+                                            <i class="fas fa-phone" style="color: var(--primary-color); margin-right: 10px;"></i>
+                                            <strong>Phone:</strong><br>
+                                            0796 542 323<br>
+                                            0728 119 502
+                                        </p>
+                                        <p style="margin-bottom: 15px;">
+                                            <i class="fas fa-envelope" style="color: var(--primary-color); margin-right: 10px;"></i>
+                                            <strong>Email:</strong><br>
+                                            uwizeyimanajoshua@gmail.com
+                                        </p>
+                                        <p style="margin-bottom: 15px;">
+                                            <i class="fas fa-clock" style="color: var(--primary-color); margin-right: 10px;"></i>
+                                            <strong>Working Hours:</strong><br>
+                                            Monday - Sunday: 7 AM - 10 PM
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Admin Dashboard -->
+            <section id="admin-page" class="page hidden">
+                <div class="admin-container">
+                    <!-- Sidebar -->
+                    <aside class="admin-sidebar">
+                        <div class="sidebar-header">
+                            <div class="logo" style="text-align: center;">
+                                <div class="logo-text" style="font-size: 1.8rem;">
+                                    Sun<span style="position: relative; z-index: 2;">shine</span>
+                                    <div class="sun-art" style="width: 40px; height: 40px; left: 25px;">
+                                        <div class="sun-rays" style="width: 60px; height: 60px;">
+                                            <div class="ray"></div><div class="ray"></div><div class="ray"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pharmacy-text" style="font-size: 0.8rem; margin-top: 5px;">Admin Panel</div>
+                            </div>
+                        </div>
+                        
+                        <nav class="sidebar-menu">
+                            <ul>
+                                <li><a href="#" onclick="showAdminTab('dashboard')" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                                <li><a href="#" onclick="showAdminTab('medicines')"><i class="fas fa-pills"></i> Medicines</a></li>
+                                <li><a href="#" onclick="showAdminTab('orders')"><i class="fas fa-shopping-cart"></i> Orders</a></li>
+                                <li><a href="#" onclick="showAdminTab('requests')"><i class="fas fa-clipboard-list"></i> Medicine Requests</a></li>
+                                <li><a href="#" onclick="showAdminTab('users')"><i class="fas fa-users"></i> Users</a></li>
+                                <li><a href="#" onclick="showAdminTab('reports')"><i class="fas fa-chart-bar"></i> Reports</a></li>
+                                <li><a href="#" onclick="showAdminTab('settings')"><i class="fas fa-cog"></i> Settings</a></li>
+                            </ul>
+                        </nav>
+                    </aside>
+                    
+                    <!-- Main Content -->
+                    <main class="admin-main">
+                        <header class="admin-topbar">
+                            <div class="topbar-left">
+                                <h3 id="admin-title">Dashboard</h3>
+                            </div>
+                            <div class="topbar-right">
+                                <button onclick="logout()" class="btn btn-outline">
+                                    <i class="fas fa-sign-out-alt"></i> Logout
+                                </button>
+                            </div>
+                        </header>
+                        
+                        <div class="admin-content">
+                            <!-- Dashboard Tab -->
+                            <div id="admin-dashboard" class="tab-content active">
+                                <div class="admin-stats-grid">
+                                    <div class="admin-stat-card">
+                                        <div class="admin-stat-icon">
+                                            <i class="fas fa-shopping-cart"></i>
+                                        </div>
+                                        <div class="admin-stat-value" id="total-orders">0</div>
+                                        <div class="admin-stat-label">Total Orders</div>
+                                    </div>
+                                    
+                                    <div class="admin-stat-card">
+                                        <div class="admin-stat-icon">
+                                            <i class="fas fa-pills"></i>
+                                        </div>
+                                        <div class="admin-stat-value" id="total-medicines">0</div>
+                                        <div class="admin-stat-label">Medicines</div>
+                                    </div>
+                                    
+                                    <div class="admin-stat-card">
+                                        <div class="admin-stat-icon">
+                                            <i class="fas fa-users"></i>
+                                        </div>
+                                        <div class="admin-stat-value" id="total-users">0</div>
+                                        <div class="admin-stat-label">Users</div>
+                                    </div>
+                                    
+                                    <div class="admin-stat-card">
+                                        <div class="admin-stat-icon">
+                                            <i class="fas fa-money-bill"></i>
+                                        </div>
+                                        <div class="admin-stat-value" id="total-revenue">0 RWF</div>
+                                        <div class="admin-stat-label">Revenue</div>
+                                    </div>
+                                </div>
+                                
+                                <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 30px; margin-top: 40px;">
+                                    <div class="medicine-card">
+                                        <div class="medicine-info">
+                                            <h4>Recent Orders</h4>
+                                            <div id="recent-orders" style="margin-top: 20px;">
+                                                <!-- Loaded via JavaScript -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="medicine-card">
+                                        <div class="medicine-info">
+                                            <h4>Quick Actions</h4>
+                                            <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 20px;">
+                                                <button onclick="showAdminTab('medicines')" class="btn btn-primary">
+                                                    <i class="fas fa-plus"></i> Add Medicine
+                                                </button>
+                                                <button onclick="showAdminTab('orders')" class="btn btn-secondary">
+                                                    <i class="fas fa-shopping-cart"></i> View Orders
+                                                </button>
+                                                <button onclick="showAdminTab('reports')" class="btn btn-outline">
+                                                    <i class="fas fa-chart-line"></i> View Reports
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="medicine-card" style="margin-top: 30px;">
+                                    <div class="medicine-info">
+                                        <h4>Sales Overview (Last 7 Days)</h4>
+                                        <canvas id="salesChart" height="100"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Medicines Management Tab -->
+                            <div id="admin-medicines" class="tab-content hidden">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+                                    <h3>Manage Medicines</h3>
+                                    <button onclick="showMedicineForm()" class="btn btn-primary">
+                                        <i class="fas fa-plus"></i> Add Medicine
+                                    </button>
+                                </div>
+                                
+                                <!-- Medicine Form -->
+                                <div id="medicine-form" class="medicine-card hidden" style="margin-bottom: 30px;">
+                                    <div class="medicine-info">
+                                        <h4 id="medicine-form-title">Add New Medicine</h4>
+                                        <form id="new-medicine-form" style="margin-top: 20px;">
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                                                <div class="form-group">
+                                                    <label>Medicine Name*</label>
+                                                    <input type="text" id="medicine-name-input" class="form-control" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Category*</label>
+                                                    <select id="medicine-category-input" class="form-control" required>
+                                                        <option value="pain">Pain Relief</option>
+                                                        <option value="fever">Fever & Cold</option>
+                                                        <option value="allergy">Allergy</option>
+                                                        <option value="vitamin">Vitamins</option>
+                                                        <option value="antibiotic">Antibiotics</option>
+                                                        <option value="chronic">Chronic Disease</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                                                <div class="form-group">
+                                                    <label>Price (RWF)*</label>
+                                                    <input type="number" id="medicine-price-input" class="form-control" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Stock Quantity*</label>
+                                                    <input type="number" id="medicine-stock-input" class="form-control" required>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="form-group" style="margin-bottom: 20px;">
+                                                <label>Description*</label>
+                                                <textarea id="medicine-description-input" class="form-control" rows="3" required></textarea>
+                                            </div>
+                                            
+                                            <div style="display: flex; gap: 10px; justify-content: flex-end;">
+                                                <button type="button" onclick="hideMedicineForm()" class="btn btn-outline">Cancel</button>
+                                                <button type="submit" class="btn btn-primary">Save Medicine</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                
+                                <!-- Medicines Table -->
+                                <div class="medicine-card">
+                                    <div class="medicine-info">
+                                        <table class="data-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Medicine</th>
+                                                    <th>Category</th>
+                                                    <th>Price</th>
+                                                    <th>Stock</th>
+                                                    <th>Status</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="admin-medicines-list">
+                                                <!-- Loaded via JavaScript -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Orders Management Tab -->
+                            <div id="admin-orders" class="tab-content hidden">
+                                <h3>Manage Orders</h3>
+                                
+                                <div class="medicine-card" style="margin-top: 20px;">
+                                    <div class="medicine-info">
+                                        <table class="data-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Order ID</th>
+                                                    <th>Customer</th>
+                                                    <th>Date</th>
+                                                    <th>Items</th>
+                                                    <th>Total</th>
+                                                    <th>Status</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="admin-orders-list">
+                                                <!-- Loaded via JavaScript -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Medicine Requests Tab -->
+                            <div id="admin-requests" class="tab-content hidden">
+                                <h3>Medicine Requests</h3>
+                                
+                                <div class="medicine-card" style="margin-top: 20px;">
+                                    <div class="medicine-info">
+                                        <table class="data-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Request ID</th>
+                                                    <th>Medicine Name</th>
+                                                    <th>Requested By</th>
+                                                    <th>Date</th>
+                                                    <th>Urgency</th>
+                                                    <th>Status</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="admin-requests-list">
+                                                <!-- Loaded via JavaScript -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Users Management Tab -->
+                            <div id="admin-users" class="tab-content hidden">
+                                <h3>Manage Users</h3>
+                                
+                                <div class="medicine-card" style="margin-top: 20px;">
+                                    <div class="medicine-info">
+                                        <table class="data-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>Email</th>
+                                                    <th>Phone</th>
+                                                    <th>Role</th>
+                                                    <th>Joined</th>
+                                                    <th>Orders</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="admin-users-list">
+                                                <!-- Loaded via JavaScript -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Reports Tab -->
+                            <div id="admin-reports" class="tab-content hidden">
+                                <h3>Sales Reports</h3>
+                                
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 20px 0;">
+                                    <div class="medicine-card">
+                                        <div class="medicine-info">
+                                            <h4>Monthly Revenue</h4>
+                                            <canvas id="revenueChart" height="200"></canvas>
+                                        </div>
+                                    </div>
+                                    <div class="medicine-card">
+                                        <div class="medicine-info">
+                                            <h4>Top Categories</h4>
+                                            <canvas id="categoryChart" height="200"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="medicine-card">
+                                    <div class="medicine-info">
+                                        <h4>Top Selling Medicines</h4>
+                                        <table class="data-table" style="margin-top: 20px;">
+                                            <thead>
+                                                <tr>
+                                                    <th>Medicine</th>
+                                                    <th>Category</th>
+                                                    <th>Units Sold</th>
+                                                    <th>Revenue</th>
+                                                    <th>Stock</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="top-medicines-list">
+                                                <!-- Loaded via JavaScript -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Settings Tab -->
+                            <div id="admin-settings" class="tab-content hidden">
+                                <h3>System Settings</h3>
+                                
+                                <div class="medicine-card" style="margin-top: 20px;">
+                                    <div class="medicine-info">
+                                        <h4>Pharmacy Settings</h4>
+                                        <form id="settings-form" style="margin-top: 20px;">
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                                                <div class="form-group">
+                                                    <label>Pharmacy Name</label>
+                                                    <input type="text" class="form-control" value="Sun☀shine Pharmacy Rwanda" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Contact Email</label>
+                                                    <input type="email" class="form-control" value="uwizeyimanajoshua@gmail.com" required>
+                                                </div>
+                                            </div>
+                                            
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                                                <div class="form-group">
+                                                    <label>Phone Number 1</label>
+                                                    <input type="tel" class="form-control" value="0796542323" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Phone Number 2</label>
+                                                    <input type="tel" class="form-control" value="0728119502" required>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="form-group" style="margin-bottom: 20px;">
+                                                <label>Address</label>
+                                                <textarea class="form-control" rows="3" required>Kigali, Rwanda</textarea>
+                                            </div>
+                                            
+                                            <div style="display: flex; gap: 10px; justify-content: flex-end;">
+                                                <button type="submit" class="btn btn-primary">Save Settings</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>Sunshine Pharmacy</h3>
+                        <p>Your trusted healthcare partner in Rwanda. We provide quality medicines and professional medical advice.</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Kigali, Rwanda</p>
+                        <p><i class="fas fa-phone"></i> 0796 542 323 | 0728 119 502</p>
+                        <p><i class="fas fa-envelope"></i> uwizeyimanajoshua@gmail.com</p>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3>Quick Links</h3>
+                        <a href="#" onclick="showPage('home')">Home</a>
+                        <a href="#" onclick="showPage('medicines')">Medicines</a>
+                        <a href="#" onclick="showPage('cart')">Cart</a>
+                        <a href="#" onclick="showPage('orders')">My Orders</a>
+                        <a href="#" onclick="showPage('contact')">Contact</a>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3>Services</h3>
+                        <a href="#">Medicine Dispensing</a>
+                        <a href="#">Medical Consultation</a>
+                        <a href="#">Home Delivery</a>
+                        <a href="#">Health Checkups</a>
+                        <a href="#">Prescription Services</a>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3>Working Hours</h3>
+                        <p>Monday - Sunday</p>
+                        <p>7:00 AM - 10:00 PM</p>
+                        <p>24/7 Emergency Service Available</p>
+                        <div style="margin-top: 20px;">
+                            <p>Follow us on:</p>
+                            <div style="display: flex; gap: 15px; margin-top: 10px;">
+                                <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+                                <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+                                <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+                                <a href="#"><i class="fab fa-whatsapp fa-2x"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2024 Sunshine Pharmacy Rwanda. All rights reserved. | Designed with <i class="fas fa-heart" style="color: #ff6b6b;"></i> for better healthcare</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // ==================== DATABASE SIMULATION ====================
+        class Database {
+            constructor() {
+                this.initDatabase();
+            }
+            
+            initDatabase() {
+                // Initialize users
+                if (!localStorage.getItem('sunshine_users')) {
+                    const users = [
+                        {
+                            id: 1,
+                            name: 'Admin User',
+                            email: 'admin@sunshine.com',
+                            password: 'admin123',
+                            phone: '0796542323',
+                            address: 'Kigali, Rwanda',
+                            role: 'admin',
+                            createdAt: new Date().toISOString(),
+                            ordersCount: 0
+                        },
+                        {
+                            id: 2,
+                            name: 'John Doe',
+                            email: 'user@sunshine.com',
+                            password: 'user123',
+                            phone: '0781234567',
+                            address: 'Gasabo, Kigali',
+                            role: 'user',
+                            createdAt: new Date().toISOString(),
+                            ordersCount: 2
+                        }
+                    ];
+                    localStorage.setItem('sunshine_users', JSON.stringify(users));
+                }
+                
+                // Initialize medicines with real-world data and RWF prices
+                if (!localStorage.getItem('sunshine_medicines')) {
+                    const medicines = [
+                        {
+                            id: 1,
+                            name: 'Paracetamol 500mg',
+                            description: 'Effective pain reliever and fever reducer for headaches, muscle aches, arthritis, backache, toothaches, colds, and fevers.',
+                            category: 'pain',
+                            price: 1500,
+                            stock: 150,
+                            manufacturer: 'Johnson & Johnson',
+                            image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&h=300&fit=crop',
+                            activeIngredients: 'Paracetamol 500mg per tablet',
+                            indications: 'Pain relief, fever reduction',
+                            dosage: 'Adults: 1-2 tablets every 4-6 hours as needed.',
+                            usageInstructions: 'Take with water. Do not exceed recommended dosage.',
+                            sideEffects: 'Rare: skin rash, allergic reactions.',
+                            precautions: 'Do not take with other paracetamol-containing products.',
+                            storage: 'Store at room temperature in a dry place.',
+                            expiryDate: '2025-12-31'
+                        },
+                        {
+                            id: 2,
+                            name: 'Ibuprofen 200mg',
+                            description: 'Non-steroidal anti-inflammatory drug (NSAID) for pain, inflammation, and fever reduction.',
+                            category: 'pain',
+                            price: 2500,
+                            stock: 85,
+                            manufacturer: 'Pfizer Inc.',
+                            image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop',
+                            activeIngredients: 'Ibuprofen 200mg per tablet',
+                            indications: 'Pain relief, anti-inflammatory, fever reduction',
+                            dosage: 'Adults: 1 tablet every 4-6 hours.',
+                            usageInstructions: 'Take with food or milk to avoid stomach upset.',
+                            sideEffects: 'May cause stomach pain, heartburn, nausea.',
+                            precautions: 'Not recommended for people with stomach ulcers.',
+                            storage: 'Store below 30°C in a dry place.',
+                            expiryDate: '2025-08-15'
+                        },
+                        {
+                            id: 3,
+                            name: 'Vitamin C 1000mg',
+                            description: 'Essential vitamin for immune system support, antioxidant protection, and collagen production.',
+                            category: 'vitamin',
+                            price: 3500,
+                            stock: 200,
+                            manufacturer: 'Nature Made',
+                            image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&h=300&fit=crop',
+                            activeIngredients: 'Ascorbic Acid 1000mg',
+                            indications: 'Immune support, antioxidant, wound healing',
+                            dosage: '1 tablet daily with a meal.',
+                            usageInstructions: 'Take with food for better absorption.',
+                            sideEffects: 'High doses may cause diarrhea, nausea.',
+                            precautions: 'Consult doctor if pregnant or breastfeeding.',
+                            storage: 'Store in a cool, dry place.',
+                            expiryDate: '2026-05-20'
+                        },
+                        {
+                            id: 4,
+                            name: 'Cetirizine 10mg',
+                            description: 'Non-drowsy antihistamine for relief of seasonal allergy symptoms.',
+                            category: 'allergy',
+                            price: 2800,
+                            stock: 120,
+                            manufacturer: 'Bayer AG',
+                            image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop',
+                            activeIngredients: 'Cetirizine Hydrochloride 10mg',
+                            indications: 'Seasonal allergies, hay fever, urticaria',
+                            dosage: 'Adults and children 12+: 1 tablet daily.',
+                            usageInstructions: 'Take with or without food.',
+                            sideEffects: 'Mild drowsiness, dry mouth, headache.',
+                            precautions: 'Avoid alcohol.',
+                            storage: 'Store at 20-25°C.',
+                            expiryDate: '2025-10-30'
+                        },
+                        {
+                            id: 5,
+                            name: 'Amoxicillin 500mg',
+                            description: 'Broad-spectrum antibiotic for bacterial infections.',
+                            category: 'antibiotic',
+                            price: 4500,
+                            stock: 40,
+                            manufacturer: 'GSK',
+                            image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&h=300&fit=crop',
+                            activeIngredients: 'Amoxicillin Trihydrate 500mg',
+                            indications: 'Bacterial infections: respiratory, ear, skin, urinary tract',
+                            dosage: 'As prescribed by doctor.',
+                            usageInstructions: 'Take exactly as prescribed.',
+                            sideEffects: 'Diarrhea, nausea, rash.',
+                            precautions: 'Take with food to reduce stomach upset.',
+                            storage: 'Store at room temperature.',
+                            expiryDate: '2024-12-31'
+                        },
+                        {
+                            id: 6,
+                            name: 'Metformin 500mg',
+                            description: 'Oral diabetes medicine that helps control blood sugar levels.',
+                            category: 'chronic',
+                            price: 3200,
+                            stock: 75,
+                            manufacturer: 'Merck & Co.',
+                            image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop',
+                            activeIngredients: 'Metformin Hydrochloride 500mg',
+                            indications: 'Type 2 diabetes management',
+                            dosage: 'As prescribed by doctor.',
+                            usageInstructions: 'Take with meals to reduce side effects.',
+                            sideEffects: 'Nausea, diarrhea, stomach upset.',
+                            precautions: 'Regular blood sugar monitoring required.',
+                            storage: 'Store below 25°C in a dry place.',
+                            expiryDate: '2025-06-30'
+                        },
+                        {
+                            id: 7,
+                            name: 'Aspirin 75mg',
+                            description: 'Used for pain relief, fever reduction, and prevention of heart attacks.',
+                            category: 'pain',
+                            price: 1800,
+                            stock: 95,
+                            manufacturer: 'Bayer',
+                            image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&h=300&fit=crop',
+                            activeIngredients: 'Acetylsalicylic Acid 75mg',
+                            indications: 'Pain relief, fever reduction, anti-platelet',
+                            dosage: 'As directed by healthcare provider.',
+                            usageInstructions: 'Take with food to prevent stomach upset.',
+                            sideEffects: 'Stomach irritation, increased bleeding risk.',
+                            precautions: 'Do not give to children under 16.',
+                            storage: 'Store in a dry place at room temperature.',
+                            expiryDate: '2025-09-30'
+                        },
+                        {
+                            id: 8,
+                            name: 'Multivitamin Complex',
+                            description: 'Complete multivitamin supplement for overall health and wellness.',
+                            category: 'vitamin',
+                            price: 4200,
+                            stock: 110,
+                            manufacturer: 'Centrum',
+                            image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop',
+                            activeIngredients: 'Vitamin A, C, D, E, B-complex, Minerals',
+                            indications: 'Nutritional supplement, immune support',
+                            dosage: '1 tablet daily with food.',
+                            usageInstructions: 'Take with a meal for better absorption.',
+                            sideEffects: 'May cause mild stomach upset.',
+                            precautions: 'Keep out of reach of children.',
+                            storage: 'Store in a cool, dry place.',
+                            expiryDate: '2026-03-15'
+                        }
+                    ];
+                    localStorage.setItem('sunshine_medicines', JSON.stringify(medicines));
+                }
+                
+                // Initialize medicine requests
+                if (!localStorage.getItem('sunshine_requests')) {
+                    const requests = [
+                        {
+                            id: 1,
+                            medicineName: 'Lisinopril 10mg',
+                            brand: 'AstraZeneca',
+                            dosage: '10mg tablets',
+                            quantity: 30,
+                            reason: 'For blood pressure control',
+                            urgency: 'normal',
+                            requestedBy: 'user@sunshine.com',
+                            status: 'pending',
+                            createdAt: '2024-02-01T10:30:00Z'
+                        },
+                        {
+                            id: 2,
+                            medicineName: 'Atorvastatin 20mg',
+                            brand: 'Pfizer',
+                            dosage: '20mg tablets',
+                            quantity: 90,
+                            reason: 'Cholesterol management',
+                            urgency: 'urgent',
+                            requestedBy: 'user@sunshine.com',
+                            status: 'processing',
+                            createdAt: '2024-02-05T14:45:00Z'
+                        }
+                    ];
+                    localStorage.setItem('sunshine_requests', JSON.stringify(requests));
+                }
+                
+                // Initialize orders
+                if (!localStorage.getItem('sunshine_orders')) {
+                    const orders = [
+                        {
+                            id: 1,
+                            orderNumber: 'SUN00001',
+                            userId: 2,
+                            items: [
+                                { medicineId: 1, name: 'Paracetamol 500mg', price: 1500, quantity: 2 },
+                                { medicineId: 3, name: 'Vitamin C 1000mg', price: 3500, quantity: 1 }
+                            ],
+                            subtotal: 6500,
+                            shipping: 2000,
+                            total: 8500,
+                            status: 'delivered',
+                            deliveryAddress: 'Gasabo, Kigali',
+                            paymentMethod: 'Cash on Delivery',
+                            createdAt: '2024-01-15T10:30:00Z'
+                        },
+                        {
+                            id: 2,
+                            orderNumber: 'SUN00002',
+                            userId: 2,
+                            items: [
+                                { medicineId: 2, name: 'Ibuprofen 200mg', price: 2500, quantity: 1 },
+                                { medicineId: 4, name: 'Cetirizine 10mg', price: 2800, quantity: 2 }
+                            ],
+                            subtotal: 8100,
+                            shipping: 2000,
+                            total: 10100,
+                            status: 'processing',
+                            deliveryAddress: 'Gasabo, Kigali',
+                            paymentMethod: 'Mobile Money',
+                            createdAt: '2024-02-10T14:20:00Z'
+                        }
+                    ];
+                    localStorage.setItem('sunshine_orders', JSON.stringify(orders));
+                }
+                
+                // Initialize cart
+                if (!localStorage.getItem('sunshine_cart')) {
+                    localStorage.setItem('sunshine_cart', JSON.stringify([]));
+                }
+                
+                // Initialize settings
+                if (!localStorage.getItem('sunshine_settings')) {
+                    const settings = {
+                        pharmacyName: 'Sun☀shine Pharmacy Rwanda',
+                        contactEmail: 'uwizeyimanajoshua@gmail.com',
+                        phoneNumber1: '0796542323',
+                        phoneNumber2: '0728119502',
+                        address: 'Kigali, Rwanda',
+                        shippingCost: 2000,
+                        freeShippingThreshold: 20000,
+                        businessHours: 'Monday - Sunday: 7 AM - 10 PM'
+                    };
+                    localStorage.setItem('sunshine_settings', JSON.stringify(settings));
+                }
+            }
+            
+            // User methods
+            getUsers() {
+                return JSON.parse(localStorage.getItem('sunshine_users')) || [];
+            }
+            
+            getUserByEmail(email) {
+                return this.getUsers().find(user => user.email === email);
+            }
+            
+            getUserById(id) {
+                return this.getUsers().find(user => user.id === id);
+            }
+            
+            addUser(user) {
+                const users = this.getUsers();
+                const newId = users.length > 0 ? Math.max(...users.map(u => u.id)) + 1 : 1;
+                user.id = newId;
+                user.role = user.role || 'user';
+                user.createdAt = new Date().toISOString();
+                user.ordersCount = 0;
+                users.push(user);
+                localStorage.setItem('sunshine_users', JSON.stringify(users));
+                return user;
+            }
+            
+            // Medicine methods
+            getMedicines(category = '') {
+                const medicines = JSON.parse(localStorage.getItem('sunshine_medicines')) || [];
+                if (category && category !== 'all') {
+                    return medicines.filter(med => med.category === category);
+                }
+                return medicines;
+            }
+            
+            getMedicineById(id) {
+                return this.getMedicines().find(med => med.id === id);
+            }
+            
+            addMedicine(medicine) {
+                const medicines = this.getMedicines();
+                const newId = medicines.length > 0 ? Math.max(...medicines.map(m => m.id)) + 1 : 1;
+                medicine.id = newId;
+                medicines.push(medicine);
+                localStorage.setItem('sunshine_medicines', JSON.stringify(medicines));
+                return medicine;
+            }
+            
+            updateMedicine(id, updates) {
+                const medicines = this.getMedicines();
+                const index = medicines.findIndex(med => med.id === id);
+                if (index !== -1) {
+                    medicines[index] = { ...medicines[index], ...updates };
+                    localStorage.setItem('sunshine_medicines', JSON.stringify(medicines));
+                    return medicines[index];
+                }
+                return null;
+            }
+            
+            deleteMedicine(id) {
+                const medicines = this.getMedicines();
+                const filtered = medicines.filter(med => med.id !== id);
+                localStorage.setItem('sunshine_medicines', JSON.stringify(filtered));
+                return true;
+            }
+            
+            // Order methods
+            getOrders() {
+                return JSON.parse(localStorage.getItem('sunshine_orders')) || [];
+            }
+            
+            getOrdersByUserId(userId) {
+                return this.getOrders().filter(order => order.userId === userId);
+            }
+            
+            addOrder(order) {
+                const orders = this.getOrders();
+                const newId = orders.length > 0 ? Math.max(...orders.map(o => o.id)) + 1 : 1;
+                order.id = newId;
+                order.orderNumber = `SUN${String(newId).padStart(5, '0')}`;
+                order.createdAt = new Date().toISOString();
+                order.status = 'pending';
+                orders.push(order);
+                localStorage.setItem('sunshine_orders', JSON.stringify(orders));
+                return order;
+            }
+            
+            updateOrderStatus(id, status) {
+                const orders = this.getOrders();
+                const index = orders.findIndex(order => order.id === id);
+                if (index !== -1) {
+                    orders[index].status = status;
+                    localStorage.setItem('sunshine_orders', JSON.stringify(orders));
+                    return orders[index];
+                }
+                return null;
+            }
+            
+            // Cart methods
+            getCart() {
+                return JSON.parse(localStorage.getItem('sunshine_cart')) || [];
+            }
+            
+            addToCart(item) {
+                const cart = this.getCart();
+                const existingItem = cart.find(ci => ci.medicineId === item.medicineId);
+                
+                if (existingItem) {
+                    existingItem.quantity += item.quantity;
+                } else {
+                    cart.push(item);
+                }
+                
+                localStorage.setItem('sunshine_cart', JSON.stringify(cart));
+                return cart;
+            }
+            
+            updateCartItem(medicineId, quantity) {
+                const cart = this.getCart();
+                const item = cart.find(ci => ci.medicineId === medicineId);
+                
+                if (item) {
+                    if (quantity <= 0) {
+                        const filtered = cart.filter(ci => ci.medicineId !== medicineId);
+                        localStorage.setItem('sunshine_cart', JSON.stringify(filtered));
+                        return filtered;
+                    } else {
+                        item.quantity = quantity;
+                        localStorage.setItem('sunshine_cart', JSON.stringify(cart));
+                        return cart;
+                    }
+                }
+                
+                return cart;
+            }
+            
+            removeFromCart(medicineId) {
+                const cart = this.getCart();
+                const filtered = cart.filter(item => item.medicineId !== medicineId);
+                localStorage.setItem('sunshine_cart', JSON.stringify(filtered));
+                return filtered;
+            }
+            
+            clearCart() {
+                localStorage.setItem('sunshine_cart', JSON.stringify([]));
+                return [];
+            }
+            
+            // Stats methods
+            getStats() {
+                const users = this.getUsers();
+                const medicines = this.getMedicines();
+                const orders = this.getOrders();
+                
+                const totalRevenue = orders.reduce((sum, order) => sum + order.total, 0);
+                const today = new Date().toISOString().split('T')[0];
+                const todayOrders = orders.filter(order => order.createdAt.startsWith(today));
+                const todayRevenue = todayOrders.reduce((sum, order) => sum + order.total, 0);
+                
+                return {
+                    totalUsers: users.length,
+                    totalMedicines: medicines.length,
+                    totalOrders: orders.length,
+                    totalRevenue: totalRevenue,
+                    todayRevenue: todayRevenue,
+                    lowStock: medicines.filter(m => m.stock < 10).length,
+                    pendingOrders: orders.filter(o => o.status === 'pending').length
+                };
+            }
+        }
+
+        // ==================== APPLICATION STATE ====================
+        const db = new Database();
+        let currentUser = null;
+        let currentSlide = 0;
+        let slides = [];
+        let salesChart = null;
+        let revenueChart = null;
+        let categoryChart = null;
+
+        // ==================== UTILITY FUNCTIONS ====================
+        function formatCurrency(amount) {
+            return new Intl.NumberFormat('rw-RW', {
+                style: 'currency',
+                currency: 'RWF'
+            }).format(amount);
+        }
+
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-RW', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+        }
+
+        function showAlert(message, type = 'success') {
+            const alertDiv = document.createElement('div');
+            alertDiv.className = `alert alert-${type}`;
+            alertDiv.innerHTML = `
+                <span>${message}</span>
+                <button onclick="this.parentElement.remove()" style="background: none; border: none; color: inherit; cursor: pointer;">
+                    <i class="fas fa-times"></i>
+                </button>
+            `;
+            
+            alertDiv.style.position = 'fixed';
+            alertDiv.style.top = '100px';
+            alertDiv.style.right = '20px';
+            alertDiv.style.zIndex = '9999';
+            alertDiv.style.minWidth = '300px';
+            alertDiv.style.maxWidth = '400px';
+            alertDiv.style.padding = '15px 20px';
+            alertDiv.style.borderRadius = 'var(--border-radius)';
+            alertDiv.style.boxShadow = 'var(--shadow-lg)';
+            document.body.appendChild(alertDiv);
+            
+            setTimeout(() => {
+                if (alertDiv.parentElement) {
+                    alertDiv.remove();
+                }
+            }, 5000);
+        }
+
+        function updateCartCount() {
+            const cart = db.getCart();
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cart-count').textContent = totalItems;
+        }
+
+        // ==================== SLIDER FUNCTIONS ====================
+        function initSlider() {
+            slides = document.querySelectorAll('.slide');
+            if (slides.length > 0) {
+                setInterval(nextSlide, 5000);
+            }
+        }
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            document.querySelectorAll('.slider-dot')[currentSlide].classList.remove('active');
+            
+            currentSlide = (currentSlide + 1) % slides.length;
+            
+            slides[currentSlide].classList.add('active');
+            document.querySelectorAll('.slider-dot')[currentSlide].classList.add('active');
+        }
+
+        function changeSlide(index) {
+            slides[currentSlide].classList.remove('active');
+            document.querySelectorAll('.slider-dot')[currentSlide].classList.remove('active');
+            
+            currentSlide = index;
+            
+            slides[currentSlide].classList.add('active');
+            document.querySelectorAll('.slider-dot')[currentSlide].classList.add('active');
+        }
+
+        // ==================== PAGE MANAGEMENT ====================
+        function showPage(pageName) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+                page.classList.add('hidden');
+            });
+            
+            const pageElement = document.getElementById(`${pageName}-page`);
+            if (pageElement) {
+                pageElement.classList.remove('hidden');
+                pageElement.classList.add('active');
+            }
+            
+            // Update navigation
+            document.querySelectorAll('.navbar a').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // Update active nav link
+            const activeLink = document.querySelector(`.navbar a[onclick*="${pageName}"]`);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+            
+            // Load page content
+            switch(pageName) {
+                case 'home':
+                    loadFeaturedMedicines();
+                    break;
+                case 'medicines':
+                    loadMedicines();
+                    break;
+                case 'cart':
+                    loadCart();
+                    break;
+                case 'orders':
+                    loadOrders();
+                    break;
+                case 'admin':
+                    showAdminTab('dashboard');
+                    break;
+            }
+            
+            window.scrollTo(0, 0);
+        }
+
+        // ==================== AUTHENTICATION ====================
+        function login(email, password) {
+            const user = db.getUserByEmail(email);
+            
+            if (!user) {
+                showAlert('User not found. Please check your email.', 'error');
+                return false;
+            }
+            
+            if (user.password !== password) {
+                showAlert('Incorrect password. Please try again.', 'error');
+                return false;
+            }
+            
+            currentUser = user;
+            localStorage.setItem('currentUser', JSON.stringify(user));
+            
+            // Update UI
+            document.getElementById('auth-buttons').classList.add('hidden');
+            document.getElementById('user-menu').classList.remove('hidden');
+            
+            if (user.role === 'admin') {
+                document.getElementById('admin-nav').classList.remove('hidden');
+            }
+            
+            updateCartCount();
+            showAlert('Login successful! Welcome back.', 'success');
+            
+            // Redirect based on role
+            setTimeout(() => {
+                if (user.role === 'admin') {
+                    showPage('admin');
+                } else {
+                    showPage('home');
+                }
+            }, 1000);
+            
+            return true;
+        }
+
+        function logout() {
+            currentUser = null;
+            localStorage.removeItem('currentUser');
+            
+            document.getElementById('auth-buttons').classList.remove('hidden');
+            document.getElementById('user-menu').classList.add('hidden');
+            document.getElementById('admin-nav').classList.add('hidden');
+            
+            showAlert('Logged out successfully.', 'success');
+            showPage('home');
+        }
+
+        function checkLogin() {
+            const savedUser = localStorage.getItem('currentUser');
+            if (savedUser) {
+                currentUser = JSON.parse(savedUser);
+                document.getElementById('auth-buttons').classList.add('hidden');
+                document.getElementById('user-menu').classList.remove('hidden');
+                
+                if (currentUser.role === 'admin') {
+                    document.getElementById('admin-nav').classList.remove('hidden');
+                }
+                
+                updateCartCount();
+            }
+        }
+
+        // ==================== MEDICINE FUNCTIONS ====================
+        function loadFeaturedMedicines() {
+            const medicines = db.getMedicines().slice(0, 8);
+            const container = document.getElementById('featured-medicines');
+            
+            container.innerHTML = medicines.map(med => `
+                <div class="medicine-card">
+                    <div class="medicine-image">
+                        <img src="${med.image}" alt="${med.name}" class="real-medicine-img">
+                        <div class="medicine-badge">${med.category}</div>
+                    </div>
+                    <div class="medicine-info">
+                        <h3 class="medicine-name">${med.name}</h3>
+                        <p class="medicine-description">${med.description.substring(0, 80)}...</p>
+                        <div class="medicine-price">${formatCurrency(med.price)}</div>
+                        <div class="medicine-meta">
+                            <span class="medicine-stock ${med.stock > 20 ? 'in-stock' : med.stock > 0 ? 'low-stock' : 'out-of-stock'}">
+                                ${med.stock > 20 ? 'In Stock' : med.stock > 0 ? `${med.stock} Left` : 'Out of Stock'}
+                            </span>
+                            <span class="medicine-manufacturer">${med.manufacturer}</span>
+                        </div>
+                        <button onclick="addToCart(${med.id})" class="btn btn-primary" style="width: 100%; margin-top: 10px;" ${med.stock === 0 ? 'disabled' : ''}>
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function loadMedicines() {
+            const medicines = db.getMedicines();
+            const container = document.getElementById('all-medicines');
+            
+            container.innerHTML = medicines.map(med => `
+                <div class="medicine-card">
+                    <div class="medicine-image">
+                        <img src="${med.image}" alt="${med.name}" class="real-medicine-img">
+                        <div class="medicine-badge">${med.category}</div>
+                    </div>
+                    <div class="medicine-info">
+                        <h3 class="medicine-name">${med.name}</h3>
+                        <p class="medicine-description">${med.description.substring(0, 80)}...</p>
+                        <div class="medicine-price">${formatCurrency(med.price)}</div>
+                        <div class="medicine-meta">
+                            <span class="medicine-stock ${med.stock > 20 ? 'in-stock' : med.stock > 0 ? 'low-stock' : 'out-of-stock'}">
+                                ${med.stock > 20 ? 'In Stock' : med.stock > 0 ? `${med.stock} Left` : 'Out of Stock'}
+                            </span>
+                            <span class="medicine-manufacturer">${med.manufacturer}</span>
+                        </div>
+                        <button onclick="addToCart(${med.id})" class="btn btn-primary" style="width: 100%; margin-top: 10px;" ${med.stock === 0 ? 'disabled' : ''}>
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterMedicines(category) {
+            const medicines = category === 'all' ? db.getMedicines() : db.getMedicines().filter(m => m.category === category);
+            const container = document.getElementById('all-medicines');
+            
+            container.innerHTML = medicines.map(med => `
+                <div class="medicine-card">
+                    <div class="medicine-image">
+                        <img src="${med.image}" alt="${med.name}" class="real-medicine-img">
+                        <div class="medicine-badge">${med.category}</div>
+                    </div>
+                    <div class="medicine-info">
+                        <h3 class="medicine-name">${med.name}</h3>
+                        <p class="medicine-description">${med.description.substring(0, 80)}...</p>
+                        <div class="medicine-price">${formatCurrency(med.price)}</div>
+                        <div class="medicine-meta">
+                            <span class="medicine-stock ${med.stock > 20 ? 'in-stock' : med.stock > 0 ? 'low-stock' : 'out-of-stock'}">
+                                ${med.stock > 20 ? 'In Stock' : med.stock > 0 ? `${med.stock} Left` : 'Out of Stock'}
+                            </span>
+                            <span class="medicine-manufacturer">${med.manufacturer}</span>
+                        </div>
+                        <button onclick="addToCart(${med.id})" class="btn btn-primary" style="width: 100%; margin-top: 10px;" ${med.stock === 0 ? 'disabled' : ''}>
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function searchMedicines() {
+            const query = document.getElementById('medicine-search').value.toLowerCase();
+            const medicines = db.getMedicines();
+            const filtered = medicines.filter(med => 
+                med.name.toLowerCase().includes(query) ||
+                med.description.toLowerCase().includes(query) ||
+                med.manufacturer.toLowerCase().includes(query) ||
+                med.category.toLowerCase().includes(query)
+            );
+            
+            const container = document.getElementById('all-medicines');
+            container.innerHTML = filtered.map(med => `
+                <div class="medicine-card">
+                    <div class="medicine-image">
+                        <img src="${med.image}" alt="${med.name}" class="real-medicine-img">
+                        <div class="medicine-badge">${med.category}</div>
+                    </div>
+                    <div class="medicine-info">
+                        <h3 class="medicine-name">${med.name}</h3>
+                        <p class="medicine-description">${med.description.substring(0, 80)}...</p>
+                        <div class="medicine-price">${formatCurrency(med.price)}</div>
+                        <div class="medicine-meta">
+                            <span class="medicine-stock ${med.stock > 20 ? 'in-stock' : med.stock > 0 ? 'low-stock' : 'out-of-stock'}">
+                                ${med.stock > 20 ? 'In Stock' : med.stock > 0 ? `${med.stock} Left` : 'Out of Stock'}
+                            </span>
+                            <span class="medicine-manufacturer">${med.manufacturer}</span>
+                        </div>
+                        <button onclick="addToCart(${med.id})" class="btn btn-primary" style="width: 100%; margin-top: 10px;" ${med.stock === 0 ? 'disabled' : ''}>
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function addToCart(medicineId) {
+            if (!currentUser) {
+                showAlert('Please login to add items to cart.', 'warning');
+                showPage('login');
+                return;
+            }
+            
+            const medicine = db.getMedicineById(medicineId);
+            if (!medicine) {
+                showAlert('Medicine not found.', 'error');
+                return;
+            }
+            
+            if (medicine.stock === 0) {
+                showAlert('This medicine is out of stock.', 'error');
+                return;
+            }
+            
+            db.addToCart({
+                medicineId: medicine.id,
+                name: medicine.name,
+                price: medicine.price,
+                image: medicine.image,
+                quantity: 1
+            });
+            
+            updateCartCount();
+            showAlert(`${medicine.name} added to cart!`, 'success');
+        }
+
+        // ==================== CART FUNCTIONS ====================
+        function loadCart() {
+            if (!currentUser) {
+                showAlert('Please login to view cart.', 'warning');
+                showPage('login');
+                return;
+            }
+            
+            const cart = db.getCart();
+            const container = document.getElementById('cart-items');
+            
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="medicine-card">
+                        <div class="medicine-info text-center" style="padding: 40px;">
+                            <i class="fas fa-shopping-cart" style="font-size: 3rem; color: var(--gray-color); margin-bottom: 20px;"></i>
+                            <h3>Your cart is empty</h3>
+                            <p>Add some medicines to get started</p>
+                            <button onclick="showPage('medicines')" class="btn btn-primary mt-20">
+                                <i class="fas fa-shopping-bag"></i> Browse Medicines
+                            </button>
+                        </div>
+                    </div>
+                `;
+                updateCartTotal();
+                return;
+            }
+            
+            container.innerHTML = cart.map(item => {
+                const medicine = db.getMedicineById(item.medicineId);
+                return `
+                    <div class="cart-item">
+                        <img src="${item.image}" alt="${item.name}" class="cart-item-img">
+                        <div class="cart-item-details">
+                            <h3 style="margin-bottom: 5px;">${item.name}</h3>
+                            <div style="color: var(--primary-color); font-weight: bold; margin-bottom: 10px;">${formatCurrency(item.price)}</div>
+                            <div style="display: flex; align-items: center; gap: 15px;">
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <button onclick="updateCartQuantity(${item.medicineId}, ${item.quantity - 1})" class="btn btn-outline" style="padding: 5px 10px;">-</button>
+                                    <span style="min-width: 30px; text-align: center;">${item.quantity}</span>
+                                    <button onclick="updateCartQuantity(${item.medicineId}, ${item.quantity + 1})" class="btn btn-outline" style="padding: 5px 10px;">+</button>
+                                </div>
+                                <div style="font-weight: bold;">${formatCurrency(item.price * item.quantity)}</div>
+                            </div>
+                        </div>
+                        <button onclick="removeFromCart(${item.medicineId})" class="btn btn-outline" style="color: var(--danger-color);">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                `;
+            }).join('');
+            
+            updateCartTotal();
+        }
+
+        function updateCartQuantity(medicineId, quantity) {
+            if (quantity < 1) {
+                removeFromCart(medicineId);
+                return;
+            }
+            
+            const medicine = db.getMedicineById(medicineId);
+            if (medicine && quantity > medicine.stock) {
+                showAlert(`Only ${medicine.stock} items available in stock.`, 'warning');
+                return;
+            }
+            
+            db.updateCartItem(medicineId, quantity);
+            loadCart();
+            updateCartCount();
+        }
+
+        function removeFromCart(medicineId) {
+            db.removeFromCart(medicineId);
+            loadCart();
+            updateCartCount();
+            showAlert('Item removed from cart.', 'success');
+        }
+
+        function updateCartTotal() {
+            const cart = db.getCart();
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const shipping = 2000;
+            const total = subtotal + shipping;
+            
+            document.getElementById('cart-subtotal').textContent = formatCurrency(subtotal);
+            document.getElementById('cart-delivery').textContent = formatCurrency(shipping);
+            document.getElementById('cart-total').textContent = formatCurrency(total);
+        }
+
+        function checkout() {
+            if (!currentUser) {
+                showAlert('Please login to checkout.', 'warning');
+                showPage('login');
+                return;
+            }
+            
+            const cart = db.getCart();
+            if (cart.length === 0) {
+                showAlert('Your cart is empty.', 'warning');
+                return;
+            }
+            
+            // Check stock availability
+            for (const item of cart) {
+                const medicine = db.getMedicineById(item.medicineId);
+                if (medicine.stock < item.quantity) {
+                    showAlert(`Insufficient stock for ${medicine.name}. Only ${medicine.stock} available.`, 'error');
+                    return;
+                }
+            }
+            
+            // Create order
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const shipping = 2000;
+            const total = subtotal + shipping;
+            
+            const order = {
+                userId: currentUser.id,
+                items: cart.map(item => ({
+                    medicineId: item.medicineId,
+                    name: item.name,
+                    price: item.price,
+                    quantity: item.quantity
+                })),
+                subtotal: subtotal,
+                shipping: shipping,
+                total: total,
+                status: 'pending',
+                deliveryAddress: currentUser.address,
+                paymentMethod: 'Cash on Delivery'
+            };
+            
+            // Update medicine stock
+            for (const item of cart) {
+                const medicine = db.getMedicineById(item.medicineId);
+                db.updateMedicine(item.medicineId, {
+                    ...medicine,
+                    stock: medicine.stock - item.quantity
+                });
+            }
+            
+            db.addOrder(order);
+            db.clearCart();
+            
+            updateCartCount();
+            showAlert('Order placed successfully! We will contact you soon.', 'success');
+            showPage('orders');
+        }
+
+        // ==================== ORDER FUNCTIONS ====================
+        function loadOrders() {
+            if (!currentUser) {
+                showAlert('Please login to view orders.', 'warning');
+                showPage('login');
+                return;
+            }
+            
+            const orders = currentUser.role === 'admin' ? db.getOrders() : db.getOrdersByUserId(currentUser.id);
+            const container = document.getElementById('orders-list');
+            
+            if (orders.length === 0) {
+                container.innerHTML = `
+                    <div class="medicine-card">
+                        <div class="medicine-info text-center" style="padding: 40px;">
+                            <i class="fas fa-box-open" style="font-size: 3rem; color: var(--gray-color); margin-bottom: 20px;"></i>
+                            <h3>No orders yet</h3>
+                            <p>Start shopping to see your orders here</p>
+                            <button onclick="showPage('medicines')" class="btn btn-primary mt-20">
+                                <i class="fas fa-shopping-bag"></i> Browse Medicines
+                            </button>
+                        </div>
+                    </div>
+                `;
+                return;
+            }
+            
+            container.innerHTML = orders.reverse().map(order => `
+                <div class="medicine-card" style="margin-bottom: 20px;">
+                    <div class="medicine-info">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                            <div>
+                                <h3 style="margin: 0;">Order #${order.orderNumber}</h3>
+                                <p style="color: var(--gray-color); margin: 5px 0 0;">${formatDate(order.createdAt)}</p>
+                            </div>
+                            <span class="status-badge status-${order.status}">
+                                ${order.status.charAt(0).toUpperCase() + order.status.slice(1)}
+                            </span>
+                        </div>
+                        
+                        <div style="margin: 20px 0;">
+                            ${order.items.map(item => `
+                                <div style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--light-gray);">
+                                    <div>
+                                        <div style="font-weight: 600;">${item.name}</div>
+                                        <div style="color: var(--gray-color); font-size: 0.9rem;">${item.quantity} x ${formatCurrency(item.price)}</div>
+                                    </div>
+                                    <div style="font-weight: 600;">${formatCurrency(item.price * item.quantity)}</div>
+                                </div>
+                            `).join('')}
+                        </div>
+                        
+                        <div style="display: flex; justify-content: space-between; font-weight: bold; font-size: 1.1rem;">
+                            <span>Total:</span>
+                            <span>${formatCurrency(order.total)}</span>
+                        </div>
+                        
+                        ${currentUser.role === 'admin' ? `
+                            <div style="margin-top: 20px;">
+                                <label>Update Status:</label>
+                                <select onchange="updateOrderStatus(${order.id}, this.value)" class="form-control" style="margin-top: 5px;">
+                                    <option value="pending" ${order.status === 'pending' ? 'selected' : ''}>Pending</option>
+                                    <option value="processing" ${order.status === 'processing' ? 'selected' : ''}>Processing</option>
+                                    <option value="delivered" ${order.status === 'delivered' ? 'selected' : ''}>Delivered</option>
+                                    <option value="cancelled" ${order.status === 'cancelled' ? 'selected' : ''}>Cancelled</option>
+                                </select>
+                            </div>
+                        ` : ''}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function updateOrderStatus(orderId, status) {
+            db.updateOrderStatus(orderId, status);
+            showAlert(`Order status updated to ${status}.`, 'success');
+            loadOrders();
+            
+            if (document.getElementById('admin-orders')) {
+                loadAdminOrders();
+            }
+        }
+
+        // ==================== ADMIN FUNCTIONS ====================
+        function showAdminTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+                tab.classList.add('hidden');
+            });
+            
+            document.querySelectorAll('.sidebar-menu a').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            const tabElement = document.getElementById(`admin-${tabName}`);
+            if (tabElement) {
+                tabElement.classList.remove('hidden');
+                tabElement.classList.add('active');
+            }
+            
+            document.querySelector(`.sidebar-menu a[onclick*="${tabName}"]`).classList.add('active');
+            
+            // Update title
+            const titles = {
+                'dashboard': 'Dashboard',
+                'medicines': 'Manage Medicines',
+                'orders': 'Manage Orders',
+                'requests': 'Medicine Requests',
+                'users': 'Manage Users',
+                'reports': 'Reports',
+                'settings': 'Settings'
+            };
+            document.getElementById('admin-title').textContent = titles[tabName] || 'Admin';
+            
+            // Load content
+            switch(tabName) {
+                case 'dashboard':
+                    loadAdminDashboard();
+                    break;
+                case 'medicines':
+                    loadAdminMedicines();
+                    break;
+                case 'orders':
+                    loadAdminOrders();
+                    break;
+                case 'users':
+                    loadAdminUsers();
+                    break;
+                case 'reports':
+                    loadAdminReports();
+                    break;
+                case 'settings':
+                    loadAdminSettings();
+                    break;
+            }
+        }
+
+        function loadAdminDashboard() {
+            const stats = db.getStats();
+            
+            // Update stats
+            document.getElementById('total-orders').textContent = stats.totalOrders;
+            document.getElementById('total-medicines').textContent = stats.totalMedicines;
+            document.getElementById('total-users').textContent = stats.totalUsers;
+            document.getElementById('total-revenue').textContent = formatCurrency(stats.totalRevenue);
+            
+            // Load recent orders
+            const orders = db.getOrders().slice(-5).reverse();
+            const container = document.getElementById('recent-orders');
+            
+            if (orders.length === 0) {
+                container.innerHTML = '<p style="color: var(--gray-color); text-align: center; padding: 20px;">No recent orders</p>';
+                return;
+            }
+            
+            container.innerHTML = orders.map(order => {
+                const user = db.getUserById(order.userId);
+                return `
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--light-gray);">
+                        <div>
+                            <div style="font-weight: 600;">${order.orderNumber}</div>
+                            <div style="font-size: 0.9rem; color: var(--gray-color);">
+                                ${user ? user.name : 'Unknown'} • ${formatDate(order.createdAt)}
+                            </div>
+                        </div>
+                        <div style="text-align: right;">
+                            <div style="font-weight: 600;">${formatCurrency(order.total)}</div>
+                            <span class="status-badge status-${order.status}" style="font-size: 0.8rem;">
+                                ${order.status}
+                            </span>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+            
+            // Create charts
+            createSalesChart();
+        }
+
+        function createSalesChart() {
+            const ctx = document.getElementById('salesChart').getContext('2d');
+            
+            if (salesChart) {
+                salesChart.destroy();
+            }
+            
+            const orders = db.getOrders();
+            const last7Days = Array.from({length: 7}, (_, i) => {
+                const date = new Date();
+                date.setDate(date.getDate() - i);
+                return date.toISOString().split('T')[0];
+            }).reverse();
+            
+            const dailySales = last7Days.map(day => {
+                const dayOrders = orders.filter(order => order.createdAt.startsWith(day));
+                return dayOrders.reduce((sum, order) => sum + order.total, 0);
+            });
+            
+            salesChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: last7Days.map(day => new Date(day).toLocaleDateString('en-US', {weekday: 'short'})),
+                    datasets: [{
+                        label: 'Daily Sales (RWF)',
+                        data: dailySales,
+                        borderColor: 'rgb(255, 107, 53)',
+                        backgroundColor: 'rgba(255, 107, 53, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: true
+                        }
+                    }
+                }
+            });
+        }
+
+        function loadAdminMedicines() {
+            const medicines = db.getMedicines();
+            const container = document.getElementById('admin-medicines-list');
+            
+            container.innerHTML = medicines.map(med => `
+                <tr>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <img src="${med.image}" alt="${med.name}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 8px;">
+                            <div>
+                                <div style="font-weight: 600;">${med.name}</div>
+                                <div style="font-size: 0.9rem; color: var(--gray-color);">${med.manufacturer}</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>${med.category}</td>
+                    <td>${formatCurrency(med.price)}</td>
+                    <td>
+                        <span class="medicine-stock ${med.stock > 20 ? 'in-stock' : med.stock > 0 ? 'low-stock' : 'out-of-stock'}" style="font-size: 0.9rem;">
+                            ${med.stock}
+                        </span>
+                    </td>
+                    <td>
+                        <span class="status-badge ${med.stock > 20 ? 'status-delivered' : med.stock > 0 ? 'status-processing' : 'status-cancelled'}" style="font-size: 0.9rem;">
+                            ${med.stock > 20 ? 'Available' : med.stock > 0 ? 'Low Stock' : 'Out of Stock'}
+                        </span>
+                    </td>
+                    <td>
+                        <button onclick="editMedicine(${med.id})" class="btn btn-outline" style="padding: 5px 10px; font-size: 0.9rem;">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button onclick="deleteMedicine(${med.id})" class="btn btn-outline" style="padding: 5px 10px; font-size: 0.9rem; margin-left: 5px; color: var(--danger-color);">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function showMedicineForm(medicineId = null) {
+            const form = document.getElementById('medicine-form');
+            const title = document.getElementById('medicine-form-title');
+            
+            if (medicineId) {
+                const medicine = db.getMedicineById(medicineId);
+                if (medicine) {
+                    title.textContent = 'Edit Medicine';
+                    document.getElementById('medicine-name-input').value = medicine.name;
+                    document.getElementById('medicine-category-input').value = medicine.category;
+                    document.getElementById('medicine-price-input').value = medicine.price;
+                    document.getElementById('medicine-stock-input').value = medicine.stock;
+                    document.getElementById('medicine-description-input').value = medicine.description;
+                    form.dataset.medicineId = medicineId;
+                }
+            } else {
+                title.textContent = 'Add New Medicine';
+                document.getElementById('new-medicine-form').reset();
+                delete form.dataset.medicineId;
+            }
+            
+            form.classList.remove('hidden');
+        }
+
+        function hideMedicineForm() {
+            document.getElementById('medicine-form').classList.add('hidden');
+        }
+
+        function editMedicine(id) {
+            showMedicineForm(id);
+        }
+
+        function deleteMedicine(id) {
+            if (confirm('Are you sure you want to delete this medicine?')) {
+                db.deleteMedicine(id);
+                loadAdminMedicines();
+                loadFeaturedMedicines();
+                loadMedicines();
+                showAlert('Medicine deleted successfully.', 'success');
+            }
+        }
+
+        function loadAdminOrders() {
+            const orders = db.getOrders();
+            const container = document.getElementById('admin-orders-list');
+            
+            if (orders.length === 0) {
+                container.innerHTML = `
+                    <tr>
+                        <td colspan="7" style="text-align: center; padding: 40px; color: var(--gray-color);">
+                            No orders found
+                        </td>
+                    </tr>
+                `;
+                return;
+            }
+            
+            container.innerHTML = orders.reverse().map(order => {
+                const user = db.getUserById(order.userId);
+                const itemCount = order.items.reduce((sum, item) => sum + item.quantity, 0);
+                
+                return `
+                    <tr>
+                        <td>${order.orderNumber}</td>
+                        <td>
+                            <div>${user ? user.name : 'Unknown'}</div>
+                            <div style="font-size: 0.9rem; color: var(--gray-color);">${user ? user.email : ''}</div>
+                        </td>
+                        <td>${formatDate(order.createdAt)}</td>
+                        <td>${itemCount} items</td>
+                        <td>${formatCurrency(order.total)}</td>
+                        <td>
+                            <span class="status-badge status-${order.status}">
+                                ${order.status}
+                            </span>
+                        </td>
+                        <td>
+                            <select onchange="updateOrderStatus(${order.id}, this.value)" class="form-control" style="padding: 5px 10px; font-size: 0.9rem;">
+                                <option value="pending" ${order.status === 'pending' ? 'selected' : ''}>Pending</option>
+                                <option value="processing" ${order.status === 'processing' ? 'selected' : ''}>Processing</option>
+                                <option value="delivered" ${order.status === 'delivered' ? 'selected' : ''}>Delivered</option>
+                                <option value="cancelled" ${order.status === 'cancelled' ? 'selected' : ''}>Cancelled</option>
+                            </select>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function loadAdminUsers() {
+            const users = db.getUsers();
+            const container = document.getElementById('admin-users-list');
+            
+            container.innerHTML = users.map(user => `
+                <tr>
+                    <td>
+                        <div style="font-weight: 600;">${user.name}</div>
+                        <div style="font-size: 0.9rem; color: var(--gray-color);">${user.email}</div>
+                    </td>
+                    <td>${user.email}</td>
+                    <td>${user.phone}</td>
+                    <td>
+                        <span class="status-badge ${user.role === 'admin' ? 'status-delivered' : 'status-processing'}" style="font-size: 0.9rem;">
+                            ${user.role}
+                        </span>
+                    </td>
+                    <td>${formatDate(user.createdAt)}</td>
+                    <td>${user.ordersCount || 0}</td>
+                    <td>
+                        <button class="btn btn-outline" style="padding: 5px 10px; font-size: 0.9rem;">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function loadAdminReports() {
+            createRevenueChart();
+            createCategoryChart();
+            loadTopMedicines();
+        }
+
+        function createRevenueChart() {
+            const ctx = document.getElementById('revenueChart').getContext('2d');
+            
+            if (revenueChart) {
+                revenueChart.destroy();
+            }
+            
+            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            const orders = db.getOrders();
+            
+            const monthlyRevenue = months.map((month, index) => {
+                const monthOrders = orders.filter(order => {
+                    const date = new Date(order.createdAt);
+                    return date.getMonth() === index;
+                });
+                return monthOrders.reduce((sum, order) => sum + order.total, 0);
+            });
+            
+            revenueChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: months,
+                    datasets: [{
+                        label: 'Revenue (RWF)',
+                        data: monthlyRevenue,
+                        backgroundColor: 'rgba(255, 107, 53, 0.7)',
+                        borderColor: 'rgb(255, 107, 53)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false
+                }
+            });
+        }
+
+        function createCategoryChart() {
+            const ctx = document.getElementById('categoryChart').getContext('2d');
+            
+            if (categoryChart) {
+                categoryChart.destroy();
+            }
+            
+            const medicines = db.getMedicines();
+            const categories = {};
+            
+            medicines.forEach(med => {
+                if (!categories[med.category]) {
+                    categories[med.category] = 0;
+                }
+                categories[med.category] += med.stock;
+            });
+            
+            const categoryColors = {
+                'pain': '#ff6b6b',
+                'fever': '#4ecdc4',
+                'allergy': '#ffd166',
+                'vitamin': '#06d6a0',
+                'antibiotic': '#118ab2',
+                'chronic': '#6f42c1'
+            };
+            
+            categoryChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: Object.keys(categories).map(cat => cat.charAt(0).toUpperCase() + cat.slice(1)),
+                    datasets: [{
+                        data: Object.values(categories),
+                        backgroundColor: Object.keys(categories).map(cat => categoryColors[cat] || '#999')
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false
+                }
+            });
+        }
+
+        function loadTopMedicines() {
+            const medicines = db.getMedicines();
+            const orders = db.getOrders();
+            
+            // Calculate sales for each medicine
+            const medicineSales = {};
+            orders.forEach(order => {
+                order.items.forEach(item => {
+                    if (!medicineSales[item.medicineId]) {
+                        medicineSales[item.medicineId] = {
+                            units: 0,
+                            revenue: 0
+                        };
+                    }
+                    medicineSales[item.medicineId].units += item.quantity;
+                    medicineSales[item.medicineId].revenue += item.price * item.quantity;
+                });
+            });
+            
+            // Get top 5 medicines
+            const topMedicines = medicines
+                .filter(med => medicineSales[med.id])
+                .sort((a, b) => (medicineSales[b.id]?.revenue || 0) - (medicineSales[a.id]?.revenue || 0))
+                .slice(0, 5);
+            
+            const container = document.getElementById('top-medicines-list');
+            
+            if (topMedicines.length === 0) {
+                container.innerHTML = `
+                    <tr>
+                        <td colspan="5" style="text-align: center; padding: 20px; color: var(--gray-color);">
+                            No sales data available
+                        </td>
+                    </tr>
+                `;
+                return;
+            }
+            
+            container.innerHTML = topMedicines.map(med => {
+                const sales = medicineSales[med.id] || { units: 0, revenue: 0 };
+                
+                return `
+                    <tr>
+                        <td>${med.name}</td>
+                        <td>${med.category}</td>
+                        <td>${sales.units}</td>
+                        <td>${formatCurrency(sales.revenue)}</td>
+                        <td>${med.stock}</td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function loadAdminSettings() {
+            const settings = db.getSettings();
+            
+            // Populate settings form
+            document.querySelectorAll('#settings-form input, #settings-form textarea').forEach(input => {
+                const fieldName = input.name || input.id;
+                if (settings[fieldName] !== undefined) {
+                    input.value = settings[fieldName];
+                }
+            });
+        }
+
+        // ==================== FORM HANDLERS ====================
+        document.getElementById('login-form')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            login(email, password);
+        });
+
+        document.getElementById('register-form')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const userData = {
+                name: document.getElementById('register-name').value,
+                email: document.getElementById('register-email').value,
+                phone: document.getElementById('register-phone').value,
+                address: document.getElementById('register-address').value,
+                password: document.getElementById('register-password').value,
+                confirmPassword: document.getElementById('register-confirm-password').value
+            };
+            
+            if (db.getUserByEmail(userData.email)) {
+                showAlert('Email already registered.', 'error');
+                return;
+            }
+            
+            if (userData.password !== userData.confirmPassword) {
+                showAlert('Passwords do not match.', 'error');
+                return;
+            }
+            
+            db.addUser(userData);
+            showAlert('Registration successful! Please login.', 'success');
+            
+            document.getElementById('register-form').reset();
+            setTimeout(() => showPage('login'), 2000);
+        });
+
+        document.getElementById('new-medicine-form')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const medicineData = {
+                name: document.getElementById('medicine-name-input').value,
+                category: document.getElementById('medicine-category-input').value,
+                price: parseInt(document.getElementById('medicine-price-input').value),
+                stock: parseInt(document.getElementById('medicine-stock-input').value),
+                description: document.getElementById('medicine-description-input').value,
+                manufacturer: 'Generic Manufacturer',
+                image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&h=300&fit=crop'
+            };
+            
+            const form = document.getElementById('medicine-form');
+            const medicineId = form.dataset.medicineId;
+            
+            if (medicineId) {
+                db.updateMedicine(parseInt(medicineId), medicineData);
+                showAlert('Medicine updated successfully.', 'success');
+            } else {
+                db.addMedicine(medicineData);
+                showAlert('Medicine added successfully.', 'success');
+            }
+            
+            hideMedicineForm();
+            loadAdminMedicines();
+            loadFeaturedMedicines();
+            loadMedicines();
+        });
+
+        document.getElementById('contact-form')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            showAlert('Thank you for your message! We will contact you soon.', 'success');
+            document.getElementById('contact-form').reset();
+        });
+
+        document.getElementById('settings-form')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            showAlert('Settings saved successfully.', 'success');
+        });
+
+        // ==================== INITIALIZATION ====================
+        document.addEventListener('DOMContentLoaded', function() {
+            checkLogin();
+            loadFeaturedMedicines();
+            initSlider();
+            
+            // Check if user is admin and show admin link
+            if (currentUser && currentUser.role === 'admin') {
+                document.getElementById('admin-nav').classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
